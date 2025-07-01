@@ -3,7 +3,8 @@ Go tutorial:
    
 ------
 import (
-    "fmt"       // For formatted I/O (printing, scanning)
+
+    "fmt"       // For formatted I/O : printing, scanning
     "math/rand" // For random number generation
-    "math"      // Provides mathematical functions and constants (no randomness)
+    "math"      // Provides mathematical functions and constants - no randomness 
 )
