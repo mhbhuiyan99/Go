@@ -1,4 +1,5 @@
-Link : [package.go](https://go.dev/tour/basics/1)
+Link : https://go.dev/tour/basics/1
+
 package main
 
 import (
