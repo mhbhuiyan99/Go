@@ -1,6 +1,7 @@
 Go tutorial: 
 1. [A Tour of Go](https://go.dev/tour/list)
-2. [Go Basics](https://github.com/gophertuts/go-basics/tree/master)
+2. [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests)
+3. [Go Basics](https://github.com/gophertuts/go-basics/tree/master)
    
 ------
 ## imports
