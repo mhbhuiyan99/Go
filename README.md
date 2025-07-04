@@ -26,8 +26,10 @@ const Answer = 42 // Exported (accessible outside mypkg)
 const secret = 0  // Unexported (private to mypkg)
 ```
 ### Why Go Uses Capitalization
+
 **Simple and explicit:** No need for keywords like public or private.<br>
 **Readability:** Easily spot exported names in code (e.g., strings.ToUpper vs strings.toLower).
+
 ------
 ## Function
 
@@ -55,4 +57,25 @@ func split(sum int) (x, y int) {
 	return
 }
 ```
+--------
+## Variables
+
+The var statement declares a list of variables; as in function argument lists, the type is last.
+```
+var c, python, java bool
+```
+### Variables with initializers ###
+
+A var declaration can include initializers, one per variable. ```var i, j int = 1, 2```
+If an initializer is present, the type can be omitted; the variable will take the type of the initializer. ```var c, python, java = true, false, "no!"```
+
+Inside a function, the := short assignment statement can be used in place of a var declaration with implicit type.
+```
+func main() {
+    x := 42          // x is declared as an int
+    name := "Alice"   // name is declared as a string
+    y := 3.14        // y is declared as a float64
+}
+```
+The := syntax is not allowed at package scope.
 
