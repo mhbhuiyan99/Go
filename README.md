@@ -69,7 +69,7 @@ var c, python, java bool
 A var declaration can include initializers, one per variable. ```var i, j int = 1, 2```
 If an initializer is present, the type can be omitted; the variable will take the type of the initializer. ```var c, python, java = true, false, "no!"```
 
-Inside a function, the := short assignment statement can be used in place of a var declaration with implicit type.
+Inside a function, the ```:=``` short assignment statement can be used in place of a var declaration with implicit type.
 ```
 func main() {
     x := 42          // x is declared as an int
@@ -77,5 +77,5 @@ func main() {
     y := 3.14        // y is declared as a float64
 }
 ```
-The := syntax is not allowed at package scope.
+The ```:=``` syntax is not allowed at package scope (outside any function).
 
