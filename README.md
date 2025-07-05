@@ -10,9 +10,10 @@ Others:
    
 ------
 ## imports
-    "fmt"       // For formatted I/O : printing, scanning
-    "math/rand" // For random number generation
-    "math"      // Provides mathematical functions and constants - no randomness 
+    "fmt"       	// For formatted I/O : printing, scanning
+    "math/rand" 	// For random number generation
+    "math"      	// Provides mathematical functions and constants - no randomness 
+    "math/cmplx" 	// Provides mathematical functions for complex numbers
 ------
 ## Exported Names in Go
 
@@ -79,3 +80,24 @@ func main() {
 ```
 The ```:=``` syntax is not allowed at package scope (outside any function).
 
+### Basic types
+
+```
+bool
+string
+int  int8  int16  int32  int64
+uint uint8 uint16 uint32 uint64 uintptr
+byte // alias for uint8
+rune // alias for int32
+     // represents a Unicode code point
+float32 float64
+complex64 complex128
+```
+#### Zero Values
+Variables declared without an explicit initial value are given their zero value. <br>
+The zero value is:
+```
+0 for numeric types,
+false for the boolean type, and
+"" (the empty string) for strings.
+```
