@@ -10,10 +10,14 @@ Others:
    
 ------
 ## imports
+```
     "fmt"       	// For formatted I/O : printing, scanning
     "math/rand" 	// For random number generation
     "math"      	// Provides mathematical functions and constants - no randomness 
     "math/cmplx" 	// Provides mathematical functions for complex numbers
+```
+Go refuses to compile programs with unused variables or imports, trading short-term convenience for long-term build speed and program clarity.
+
 ------
 ## Exported Names in Go
 
