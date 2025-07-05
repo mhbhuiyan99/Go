@@ -1,5 +1,5 @@
 Resources: 
-1. [A Tour of Go](https://go.dev/tour/list)
+1. [A Tour of Go](https://go.dev/tour/list) + [Golang Backend Development](https://youtube.com/playlist?list=PLpCqPSEm2Xe8sEY2haMDUVgwbkIs5NCJI&si=Krk7dnfCoNG7ulpY)
 2. [Exercism Go Track](https://exercism.org/tracks/go)
 3. [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests)
 4. [Go Basics](https://github.com/gophertuts/go-basics/tree/master)
