@@ -2,11 +2,7 @@ Resources:
 1. [A Tour of Go](https://go.dev/tour/list)
 2. [Exercism Go Track](https://exercism.org/tracks/go)
 3. [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests)
-   
-Others:
-1. [Learn X in Y minutes](https://learnxinyminutes.com/go/)
-2. [Go by Example](https://gobyexample.com/)
-3. [Go Basics](https://github.com/gophertuts/go-basics/tree/master)
+4. [Go Basics](https://github.com/gophertuts/go-basics/tree/master)
    
 ------
 ## imports
@@ -105,3 +101,7 @@ The zero value is:
 false for the boolean type, and
 "" (the empty string) for strings.
 ```
+--------
+### Packages and Scopes
+
+[Understanding Packages and Scopes in Golang](https://medium.com/@mhbhuiyan10023/understanding-packages-and-scopes-in-golang-fc0b11d65001)
