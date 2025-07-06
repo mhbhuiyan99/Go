@@ -101,6 +101,22 @@ The zero value is:
 false for the boolean type, and
 "" (the empty string) for strings.
 ```
+### Variable Shadowing
+Variable shadowing happens when a variable declared within a narrower scope (like inside a function or block) has the same name as a variable in an outer scope. The inner variable "shadows" or hides the outer one within its scope.
+```
+package main
+import "fmt"
+var x = 10
+func main(){
+	done := false
+	if !done {
+		x := 30
+		fmt.Println(x)
+	}
+	fmt.Println(x)
+}
+```
+
 --------
 ### Packages and Scopes
 
