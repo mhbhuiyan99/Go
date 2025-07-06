@@ -147,14 +147,20 @@ var y float64 = x  // ❌
 [Understanding Packages and Scopes in Golang](https://medium.com/@mhbhuiyan10023/understanding-packages-and-scopes-in-golang-fc0b11d65001)
 
 ------
-## Function Types
-### Standard Function or Named Function
+## Function Types 
+### First Order Function
+A first-order function is a regular function that:
+1. Does not take another function as an argument
+2. Does not return another function
+
+#### 🔹 Standard Function or Named Function
 ```
 func functionName(parameters) returnType {
     // simply a regular function that has a name
 }
 ```
-### Init Function
+#### 🔹 Init Function
+
 The init() function in Go is a special built-in function that is automatically called before the main() function or when a package is imported (you can not call this).<br>
 
 It is commonly used for:
@@ -179,12 +185,13 @@ Output:
 10
 20
 ```
-#### Syntax
+##### Syntax
 1. It takes no arguments
 2. It returns nothing
 3. You can have multiple init() functions in a package (in different files or the same file)
 
-### Anonymous Function
+#### 🔹 Anonymous Function
+
 An anonymous function is a function without a name. 
 ```
 package main
@@ -200,7 +207,8 @@ func main() {
     fmt.Println("Sum:", result) // Output: Sum: 12
 }
 ```
-### IIFE (Immediately Invoked Function Expression)
+#### 🔹 IIFE (Immediately Invoked Function Expression)
+
 In Go, an IIFE is an ***anonymous function*** that is defined and called immediately.
 ```
 package main
@@ -215,3 +223,84 @@ func main() {
     fmt.Println("IIFE Result:", result) // Output: 25
 }
 ```
+#### Parameter and Argument
+Parameters are placeholders, arguments are real values.
+```
+func greet(name string) { // "name" is a parameter
+    fmt.Println("Hello", name)
+}
+
+func main() {
+    greet("Mojammel")     // "Mojammel" is an argument
+}
+```
+## Higher-order functions OR First-Class Functions
+A function which does at least one of the following
+1. takes one or more functions as arguments
+2. returns a function as its result
+
+🧪 Example 1: Function as Parameter
+```
+func calculate(a int, b int, op func(int, int) int) int {
+		       // 🔍syntax for assigning a function to a variable >> anonymous function
+    return op(a, b)
+}
+
+func multiply(x, y int) int {
+    return x * y
+}
+
+func main() {
+    result := calculate(3, 4, multiply)
+    fmt.Println("Result:", result) // Output: 12
+}
+```
+🧪 Example 2: Returning a Function
+```
+func makeAdder(x int) func(int) int {
+    return func(y int) int {
+        return x + y
+    }
+}
+
+func main() {
+    add5 := makeAdder(5)
+    fmt.Println(add5(10)) // Output: 15
+}
+```
+### First-Class Citizen (or First-Class Object)
+In programming, a first-class citizen (or first-class object/value) is any ✨entity✨ (Variables, Functions, Structs, Slices, Maps, etc.) that can be used like any other value — i.e., assigned to variables, passed as arguments, returned from functions, and stored in data structures.
+
+### First-Class Functions
+Functions are treated like values.<br>
+A first-class function is a function ( = ✨entity✨ ) that is treated as a first-class citizen in a programming language.
+
+1. Assign functions to variables
+2. Pass them as arguments
+3. Return them from other functions
+4. Store them in data structures (like slices, maps)
+
+### Callback Function
+A callback function is a function passed as an argument to another function, which is then called ("called back") inside that outer function.
+```
+package main
+
+import "fmt"
+
+// This is the "caller" function that receives a callback
+func calculate(a int, b int, callback func(int, int) int) int {
+    return callback(a, b)
+}
+
+// This is the "callback" function
+func add(x int, y int) int {
+    return x + y
+}
+
+func main() {
+    result := calculate(3, 4, add) // Passing 'add' as a callback
+    fmt.Println("Result:", result) // Output: 7
+}
+```
+
+
