@@ -116,7 +116,27 @@ func main(){
 	fmt.Println(x)
 }
 ```
+### Type conversions
+The expression T(v) converts the value v to the type T.<br>
 
+Some numeric conversions:
+```
+var i int = 42
+var f float64 = float64(i)
+var u uint = uint(f)
+```
+Or, put more simply:
+```
+i := 42
+f := float64(i)
+u := uint(f)
+```
+Unlike in C, in Go assignment between items of different type requires an explicit conversion.
+```
+var x int = 10
+var y float64 = float64(x)  // ✅ 
+var y float64 = x  // ❌
+```
 --------
 ### Packages and Scopes
 
