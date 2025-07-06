@@ -115,6 +115,10 @@ func main(){
 	}
 	fmt.Println(x)
 }
+---
+Output:
+30
+10
 ```
 ### Type conversions
 The expression T(v) converts the value v to the type T.<br>
