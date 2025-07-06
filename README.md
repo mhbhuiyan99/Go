@@ -184,5 +184,34 @@ Output:
 2. It returns nothing
 3. You can have multiple init() functions in a package (in different files or the same file)
 
+### Anonymous Function
+An anonymous function is a function without a name. 
+```
+package main
 
+import "fmt"
 
+func main() {
+    add := func(a int, b int) int { // anonymous function stored in the variable add
+        return a + b
+    }
+
+    result := add(5, 7)
+    fmt.Println("Sum:", result) // Output: Sum: 12
+}
+```
+### IIFE (Immediately Invoked Function Expression)
+In Go, an IIFE is an ***anonymous function*** that is defined and called immediately.
+```
+package main
+
+import "fmt"
+
+func main() {
+    result := func(x, y int) int {
+        return x + y
+    }(10, 15) // 👈 Call immediately
+
+    fmt.Println("IIFE Result:", result) // Output: 25
+}
+```
