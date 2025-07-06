@@ -141,3 +141,44 @@ var y float64 = x  // ❌
 ### Packages and Scopes
 
 [Understanding Packages and Scopes in Golang](https://medium.com/@mhbhuiyan10023/understanding-packages-and-scopes-in-golang-fc0b11d65001)
+
+------
+## Function Types
+### Standard Function or Named Function
+```
+func functionName(parameters) returnType {
+    // simply a regular function that has a name
+}
+```
+### Init Function
+The init() function in Go is a special built-in function that is automatically called before the main() function or when a package is imported (you can not call this).<br>
+
+It is commonly used for:
+1. Setting up initial values
+2. Initializing state
+3. Connecting to databases or reading config files
+4. Running setup logic before any other function is called
+```
+package main
+import "fmt"
+
+var x = 10
+func main(){
+	fmt.Println(x)
+}
+func init(){
+	fmt.Println(x)
+	x = 20
+}
+---
+Output:
+10
+20
+```
+#### Syntax
+1. It takes no arguments
+2. It returns nothing
+3. You can have multiple init() functions in a package (in different files or the same file)
+
+
+
