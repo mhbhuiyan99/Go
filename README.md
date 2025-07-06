@@ -153,13 +153,13 @@ A first-order function is a regular function that:
 1. Does not take another function as an argument
 2. Does not return another function
 
-#### 🔹 Standard Function or Named Function
+#### 🛡️ Standard Function or Named Function
 ```
 func functionName(parameters) returnType {
     // simply a regular function that has a name
 }
 ```
-#### 🔹 Init Function
+#### 🛡️ Init Function
 
 The init() function in Go is a special built-in function that is automatically called before the main() function or when a package is imported (you can not call this).<br>
 
@@ -190,7 +190,7 @@ Output:
 2. It returns nothing
 3. You can have multiple init() functions in a package (in different files or the same file)
 
-#### 🔹 Anonymous Function
+#### 🛡️ Anonymous Function
 
 An anonymous function is a function without a name. 
 ```
@@ -207,7 +207,7 @@ func main() {
     fmt.Println("Sum:", result) // Output: Sum: 12
 }
 ```
-#### 🔹 IIFE (Immediately Invoked Function Expression)
+#### 🛡️ IIFE (Immediately Invoked Function Expression)
 
 In Go, an IIFE is an ***anonymous function*** that is defined and called immediately.
 ```
