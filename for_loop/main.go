@@ -14,8 +14,9 @@ func For(x int) {
 func For_as_While(x int) {
 	fmt.Print("for as while : ")
 
-	for i := x; i >= 0; i-- {
-		fmt.Print(i, " ")
+	for x >= 0 {
+		fmt.Print(x, " ")
+		x--
 	}
 	fmt.Println()
 }
@@ -36,6 +37,7 @@ func main() {
 	For_as_While(n)
 	For_Range(n)
 }
+
 /* >>> Output: 
 for loop : 0 1 2 3 4 5 6 7       
 for as while : 7 6 5 4 3 2 1 0   
