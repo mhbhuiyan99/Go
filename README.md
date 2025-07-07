@@ -337,6 +337,8 @@ for _, value := range nums { // skip index
     // Statements
 }
 ```
+[learn for loop with code](https://github.com/mhbhuiyan99/Go/tree/main/for_loop)
+
 ### if, if else, else
 ```
 if condition1 {
@@ -363,4 +365,8 @@ if x > 5 { ... }
 // ❌ wrong
 if (x > 5) { ... } // Compiler allows but not idiomatic Go
 ```
-[learn with code](https://github.com/mhbhuiyan99/Go/tree/main/for_loop)
+#### Exercise: [Loops and Functions](https://go.dev/tour/flowcontrol/8)
+[solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/Loops_and_Functions.go)
+[Newton-Raphson method for finding square roots](https://mhbhuiyan.medium.com/newton-raphson-method-for-finding-square-roots-30d0f9021869)
+
+
