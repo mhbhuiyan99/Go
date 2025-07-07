@@ -363,3 +363,4 @@ if x > 5 { ... }
 // ❌ wrong
 if (x > 5) { ... } // Compiler allows but not idiomatic Go
 ```
+[learn with code](https://github.com/mhbhuiyan99/Go/tree/main/for_loop)
