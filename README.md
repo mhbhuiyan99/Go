@@ -302,5 +302,39 @@ func main() {
     fmt.Println("Result:", result) // Output: 7
 }
 ```
+------
+## Loop 
+### For
 
+Go has only one looping construct, the ```for``` loop.
+#### Syntax: 
+```
+for initialization; condition; update {
+  statement(s)
+}
+```
+### for Loop as a While Loop
+```
+for condition {
+  // Statements
+}
+```
+### Infinite Loops
+```
+for {
+  fmt.Println("Running forever...")
+}
+```
+### for...range Loop
+```
+for index, value = range nums {
+  // Statements
+}
+```
+You can also skip the index or value if not needed:
+```
+for _, value := range nums { // skip index
+    // Statements
+}
+```
 
