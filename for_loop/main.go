@@ -36,3 +36,8 @@ func main() {
 	For_as_While(n)
 	For_Range(n)
 }
+/* >>> Output: 
+for loop : 0 1 2 3 4 5 6 7       
+for as while : 7 6 5 4 3 2 1 0   
+for...range Loop : 0 1 2 3 4 5 6 
+*/
