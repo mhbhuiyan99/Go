@@ -365,8 +365,7 @@ if x > 5 { ... }
 // ❌ wrong
 if (x > 5) { ... } // Compiler allows but not idiomatic Go
 ```
-#### Exercise: [Loops and Functions](https://go.dev/tour/flowcontrol/8)
-[solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/Loops_and_Functions.go) <br>
-[Newton-Raphson method for finding square roots](https://mhbhuiyan.medium.com/newton-raphson-method-for-finding-square-roots-30d0f9021869)
+#### Exercise: [Loops and Functions](https://go.dev/tour/flowcontrol/8) > [solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/Loops_and_Functions.go) <br>
+🧠 [Newton-Raphson method for finding square roots](https://mhbhuiyan.medium.com/newton-raphson-method-for-finding-square-roots-30d0f9021869)
 
 
