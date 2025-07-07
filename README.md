@@ -303,29 +303,29 @@ func main() {
 }
 ```
 ------
-## Loop 
+## Flow control statements
 ### For
 
 Go has only one looping construct, the ```for``` loop.
-#### Syntax: 
+**Syntax:** 
 ```
 for initialization; condition; update {
-  statement(s)
+  // Statements
 }
 ```
-### for Loop as a While Loop
+#### 🛡️ for Loop as a While Loop
 ```
 for condition {
   // Statements
 }
 ```
-### Infinite Loops
+#### 🛡️ Infinite Loops
 ```
 for {
   fmt.Println("Running forever...")
 }
 ```
-### for...range Loop
+#### 🛡️ for...range Loop
 ```
 for index, value = range nums {
   // Statements
@@ -337,4 +337,29 @@ for _, value := range nums { // skip index
     // Statements
 }
 ```
+### if, if else, else
+```
+if condition1 {
+    // code1
+} else if condition2 {
+    // code2
+} else {
+    // code3
+}
+```
+#### Short Statement in if
 
+You can declare and initialize a variable inside the if statement.
+```
+if x := 5; x > 3 {
+    fmt.Println("x is greater than 3")
+}
+```
+❌ No parentheses required
+```
+// ✅ correct
+if x > 5 { ... }
+
+// ❌ wrong
+if (x > 5) { ... } // Compiler allows but not idiomatic Go
+```
