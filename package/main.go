@@ -11,3 +11,7 @@ func main(){
 	fmt.Println("Sum = ", mathematical_operations.Sum(x,y))
 	fmt.Println("Multiply = ", mathematical_operations.Multiply(x,y))
 }
+/* Output:
+Sum =  8
+Multiply =  15 
+*/
