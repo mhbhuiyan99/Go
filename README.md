@@ -242,7 +242,7 @@ A function which does at least one of the following
 🧪 Example 1: Function as Parameter
 ```
 func calculate(a int, b int, op func(int, int) int) int {
-		       // 🔍syntax for assigning a function to a variable >> anonymous function
+                  // 🔍syntax for assigning a function to a variable >> anonymous function
     return op(a, b)
 }
 
@@ -339,7 +339,7 @@ for _, value := range nums { // skip index
 ```
 [learn for loop with code](https://github.com/mhbhuiyan99/Go/tree/main/for_loop)
 
-### if, if else, else
+### if, else if, else
 ```
 if condition1 {
     // code1
@@ -394,7 +394,7 @@ func main() {
 }
 
 ```
-[more example](https://go.dev/wiki/Switch)
+[more examples](https://go.dev/wiki/Switch)
 
 ### Defer
 
