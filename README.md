@@ -368,4 +368,64 @@ if (x > 5) { ... } // Compiler allows but not idiomatic Go
 #### Exercise: [Loops and Functions](https://go.dev/tour/flowcontrol/8) > [solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/Loops_and_Functions.go) <br>
 🧠 [Newton-Raphson method for finding square roots](https://mhbhuiyan.medium.com/newton-raphson-method-for-finding-square-roots-30d0f9021869)
 
+### Switch
 
+A ```switch``` statement is a shorter way to write a sequence of ```if - else``` statements. It runs the first case whose value is equal to the condition expression.<br>
+Switch cases evaluate cases from top to bottom, stopping when a case succeeds.<br>
+Switch without a condition is the same as switch ```true```.
+```
+package main
+
+import "fmt"
+
+func main() {
+	mood := "hungry"
+
+	switch mood {
+	case "happy":
+		fmt.Println("Let's write some awesome Go! 😄")
+	case "sleepy":
+		fmt.Println("Need... more... coffee... ☕😴")
+	case "hungry":
+		fmt.Println("Feed me bytes and burgers! 🍔💻")
+	default:
+		fmt.Println("Unknown mood. Rebooting... 🤖🔄")
+	}
+}
+
+```
+[more example](https://go.dev/wiki/Switch)
+
+### Defer
+
+```defer``` is a keyword in Go used to delay the execution of a function until the surrounding function returns.
+```
+package main
+
+import "fmt"
+
+func main() {
+	defer fmt.Println("World")
+	fmt.Println("Hello")
+}
+/* Output: 
+Hello
+World
+*/
+```
+#### Multiple defer statements
+
+➡️ LIFO (Last In, First Out) — like a stack.
+```
+func main() {
+	defer fmt.Println("One")
+	defer fmt.Println("Two")
+	defer fmt.Println("Three")
+}
+/* Output :
+Three
+Two
+One
+*/
+```
+🧠 [Using defer in Go](https://dev.to/zakariachahboun/common-use-cases-for-defer-in-go-1071)
