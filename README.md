@@ -429,3 +429,6 @@ One
 */
 ```
 🧠 [Using defer in Go](https://dev.to/zakariachahboun/common-use-cases-for-defer-in-go-1071)
+-------
+## Internal memory
+[Go’s memory model](https://mhbhuiyan.medium.com/gos-memory-model-092546edd714)
