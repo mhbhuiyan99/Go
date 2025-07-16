@@ -446,13 +446,11 @@ type User struct{
 ```
 #### Create Object / Instance :: Instantiate
 ```
-var user1 User
-
+	var user1 User
 	user1 = User{ // Instance or Object
 		Name: "Mojammel",
 		Age: 24,
 	}
-
 	user2 := User{
 		Name: "Saimon",
 		Age: 17,
