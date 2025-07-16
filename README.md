@@ -435,7 +435,6 @@ One
 
 --------
 ## Struct
------------
 #### Defining a struct:
 ```
 type User struct{
