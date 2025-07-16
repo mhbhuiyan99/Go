@@ -506,3 +506,36 @@ Name:  Saimon Age:  17
 Name:  Mojammel ID:  12345
 */
 ```
+-------
+## Array
+```
+package main
+import "fmt"
+
+func main(){
+	var arr [2] int
+	fmt.Println(arr)
+	// Output : [0 0], 0 is the default array value in Go
+
+	/* 
+	arr[2] = 7
+	fmt.Println(arr)
+
+	Output: Error
+	0 index array : index start from 0 [0 1 ...] */
+
+	arr[1] = 7
+	fmt.Println(arr)
+	// Output: [0 7]
+
+	
+	arr2 := [2] int{3,9}
+	fmt.Println(arr2)
+	// Output: [3 9]
+
+	// print specific index value
+	fmt.Println(arr[1], arr2[1])
+	// Output: 7 9
+}
+```
+
