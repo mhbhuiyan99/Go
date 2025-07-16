@@ -432,5 +432,30 @@ One
 
 ---------
 ## [Go’s memory model](https://mhbhuiyan.medium.com/gos-memory-model-092546edd714)
+
 --------
+## Struct
+-----------
+#### Defining a struct:
+```
+type User struct{
+	// member variable or property
+	Name string
+	Age int
+}
+```
+#### Create Object / Instance :: Instantiate
+```
+var user1 User
+
+	user1 = User{ // Instance or Object
+		Name: "Mojammel",
+		Age: 24,
+	}
+
+	user2 := User{
+		Name: "Saimon",
+		Age: 17,
+	}
+```
 
