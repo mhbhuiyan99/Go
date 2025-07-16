@@ -488,7 +488,7 @@ func (info User) printUsingReceiverFunction2(id string){
 
 func main(){
 	var user1 User
-	user1 = User{ // Instance or Object
+	user1 = User{
 		Name: "Mojammel",
 		Age: 24,
 	}
