@@ -506,6 +506,44 @@ Name:  Saimon Age:  17
 Name:  Mojammel ID:  12345
 */
 ```
+### Pointers to structs
+To access the field X of a struct when we have the struct pointer p we could write (*p).X. However, that notation is cumbersome, so the language permits us instead to write just p.X, without the explicit dereference.
+```
+type Vertex struct {
+	X int
+	Y int
+}
+func main() {
+	v := Vertex{1, 2}
+	p := &v
+	p.X = 1e9
+	fmt.Println(p.X)
+}
+```
+### Struct Literals
+
+A [struct literal](https://go.dev/tour/moretypes/5) denotes a newly allocated struct value by listing the values of its fields.<br>
+
+You can list just a subset of fields by using the Name: syntax. (And the order of named fields is irrelevant.)<br>
+
+The special prefix & returns a pointer to the struct value.
+```
+type Vertex struct {
+	X, Y int
+}
+
+var (
+	v1 = Vertex{1, 2}  // has type Vertex
+	v2 = Vertex{X: 1}  // Y:0 is implicit
+	v3 = Vertex{}      // X:0 and Y:0
+	p  = &Vertex{1, 2} // has type *Vertex
+)
+
+func main() {
+	fmt.Println(v1, p, v2, v3)
+}
+```
+
 -------
 ## Array
 ```
