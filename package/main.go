@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"Bhuiyan/package/mathematical_operations"
+	"Bhuiyan/mathematical_operations"
 )
 
 func main(){
