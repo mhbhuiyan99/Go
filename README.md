@@ -576,4 +576,9 @@ func main(){
 	// Output: 7 9
 }
 ```
+-----------
+## Pointers to Slices
+read it: [From Pointers to Slices: Exploring Go’s Underlying Memory](https://mhbhuiyan.medium.com/from-pointers-to-slices-exploring-gos-underlying-memory-d611b408870c)
+
+----------
 
