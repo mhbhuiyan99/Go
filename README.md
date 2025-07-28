@@ -428,7 +428,7 @@ Two
 One
 */
 ```
-🧠 [Using defer in Go](https://dev.to/zakariachahboun/common-use-cases-for-defer-in-go-1071)
+🧠 [Golang Defer: From Basic To Traps](https://victoriametrics.com/blog/defer-in-go/)
 
 ---------
 ## [Go’s memory model](https://mhbhuiyan.medium.com/gos-memory-model-092546edd714)
