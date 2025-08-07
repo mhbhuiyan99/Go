@@ -579,7 +579,8 @@ read it: [From Pointers to Slices: Exploring Go’s Underlying Memory](https://m
 
 ----------
 ## Maps
-map = Key value pairs.
+map = Key value pairs. <br>
+Array and Slice use only integer type index. But in ```map``` index can be any type.
 ```
 func main() {
 	menu := map[string]float64{
@@ -591,7 +592,8 @@ func main() {
 	fmt.Println(menu)
 }
 ```
-printng using ```loop```:
+**printng using ```loop```:** <br>
+The	for...range	loop processes map keys and values in a	random order because a map is an unordered collection of keys and values.
 ```
 	for key, value := range menu{
 		fmt.Println(key, "\t:: ", value) // the \t for tab
@@ -679,4 +681,20 @@ The value: 48
 The value: 0
 The value: 0 Present? false */
 ```
-[Exercise: Maps](https://go.dev/tour/moretypes/23) : [Solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/map__withStringsFields.go) + [BONUS](https://pkg.go.dev/strings#Fields)
+[Exercise: Maps + BONUS(strings.Fields)](https://go.dev/tour/moretypes/23) : [Solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/map__withStringsFields.go) <br>
+
+**Removing key/value pairs with the ```delete``` function:**
+```
+func main() {
+	menu := map[string]float64{
+		"rice": 11.23,
+		"milk": 5.67,
+		"tea" : 3.43,
+	}
+	delete(menu, "rice")
+	fmt.Println(menu)
+} // Output: map[milk:5.67 tea:3.43]
+```
+--------
+
+
