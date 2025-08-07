@@ -1,8 +1,7 @@
 Resources: 
-1. [A Tour of Go](https://go.dev/tour/list) + [Golang Backend Development](https://youtube.com/playlist?list=PLpCqPSEm2Xe8sEY2haMDUVgwbkIs5NCJI&si=Krk7dnfCoNG7ulpY)
-2. [Exercism Go Track](https://exercism.org/tracks/go)
-3. [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests)
-4. [Go Basics](https://github.com/gophertuts/go-basics/tree/master)
+1. Learn: [A Tour of Go](https://go.dev/tour/list) + [Golang Backend Development](https://youtube.com/playlist?list=PLpCqPSEm2Xe8sEY2haMDUVgwbkIs5NCJI&si=Krk7dnfCoNG7ulpY)
+2. Practice: [Exercism Go Track](https://exercism.org/tracks/go)
+3. Find something: [Go Basics](https://github.com/gophertuts/go-basics/tree/master)
    
 ------
 ## imports
@@ -581,4 +580,46 @@ func main(){
 read it: [From Pointers to Slices: Exploring Go’s Underlying Memory](https://mhbhuiyan.medium.com/from-pointers-to-slices-exploring-gos-underlying-memory-d611b408870c)
 
 ----------
+## Maps
+map = Key value pairs.
+```
+func main() {
+	menu := map[string]float64{
+		"rice": 11.23,
+		"milk": 5.67,
+		"tea" : 3.43,
+		"water": 1.87, // last comma must. otherwise syntax error
+	}
+	fmt.Println(menu)
+}
+```
+printng using ```loop```:
+```
+	for key, value := range menu{
+		fmt.Println(key, "\t:: ", value) // the \t for tab
+	}
+```
+Try another way:
+```
+func main() {
+	var menu map[string]int
+	menu["rice"] = 123
+	fmt.Println(menu) 
+}
+// result: ❌ error
+panic: assignment to entry in nil map
+```
+The zero value of a map is nil. A nil map has no keys, nor can keys be added.<br>
+How can we fixed it?<br>
+The ```make``` function returns a map of the given type, initialized and ready for use.
+```
+func main() {
+	menu := make(map[string]int)
+	menu["rice"] = 123
+	fmt.Println(menu) // Output: map[rice:123]
+}
+```
+```make``` allocate and initiate - non zeroed storage<br>
+There is an another keyword ```new```, it only allocate, no initiate of memory. 
+
 
