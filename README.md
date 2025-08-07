@@ -679,4 +679,4 @@ The value: 48
 The value: 0
 The value: 0 Present? false */
 ```
-[Exercise: Maps](https://go.dev/tour/moretypes/23) : [Solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/map__withStringsFields.go) [BONUS](https://pkg.go.dev/strings#Fields)
+[Exercise: Maps](https://go.dev/tour/moretypes/23) : [Solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/map__withStringsFields.go) + [BONUS](https://pkg.go.dev/strings#Fields)
