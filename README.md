@@ -427,12 +427,10 @@ Two
 One
 */
 ```
-🧠 [Golang Defer: From Basic To Traps](https://victoriametrics.com/blog/defer-in-go/)
-
 ---------
 ## [Go’s memory model](https://mhbhuiyan.medium.com/gos-memory-model-092546edd714)
 
---------
+
 ## Struct
 #### Defining a struct:
 ```
@@ -622,4 +620,63 @@ func main() {
 ```make``` allocate and initiate - non zeroed storage<br>
 There is an another keyword ```new```, it only allocate, no initiate of memory. 
 
+### Map literals
+Map literals are like struct literals, but the keys are required.
+```
+type Vertex struct {
+	Lat, Long float64
+}
 
+var m = map[string]Vertex{
+	"Bell Labs": Vertex{
+		40.68433, -74.39967,
+	},
+	"Google": Vertex{
+		37.42202, -122.08408,
+	},
+}
+
+func main() {
+	fmt.Println(m)
+}
+// Output: map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
+```
+If the top-level type is just a type name, you can omit it from the elements of the literal.
+```
+var m = map[string]Vertex{
+	"Bell Labs": {40.68433, -74.39967},
+	"Google":    {37.42202, -122.08408},
+}
+```
+#### Insert or update an element in map m:
+```m[key] = elem```
+#### Retrieve an element:
+```elem = m[key]```
+#### Delete an element:
+```delete(m, key)```
+#### Test that a key is present with a two-value assignment:
+```elem, ok = m[key]```<br>
+If key is in m, ok is true. If not, ok is false.<br>
+If key is not in the map, then elem is the zero value for the map's element type.
+```
+func main() {
+	m := make(map[string]int)
+
+	m["Answer"] = 42
+	fmt.Println("The value:", m["Answer"])
+
+	m["Answer"] = 48
+	fmt.Println("The value:", m["Answer"])
+
+	delete(m, "Answer")
+	fmt.Println("The value:", m["Answer"])
+
+	v, ok := m["Answer"]
+	fmt.Println("The value:", v, "Present?", ok)
+} /* Output:
+The value: 42
+The value: 48
+The value: 0
+The value: 0 Present? false */
+```
+[Exercise: Maps](https://go.dev/tour/moretypes/23) : [Solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/map__withStringsFields.go) [BONUS](https://pkg.go.dev/strings#Fields)
