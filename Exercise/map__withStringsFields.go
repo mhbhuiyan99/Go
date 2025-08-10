@@ -1,3 +1,5 @@
+Link: https://go.dev/tour/moretypes/23
+
 package main
 
 import (
