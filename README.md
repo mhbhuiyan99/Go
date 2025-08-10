@@ -301,6 +301,10 @@ func main() {
     fmt.Println("Result:", result) // Output: 7
 }
 ```
+## [Closures](https://gobyexample.com/closures)
+some example: [Function values](https://go.dev/tour/moretypes/24), [Function closures](https://go.dev/tour/moretypes/25) <br>
+Exercise: [Fibonacci closure](https://go.dev/tour/moretypes/26)
+
 ------
 ## Flow control statements
 ### For
