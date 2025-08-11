@@ -685,7 +685,7 @@ The value: 48
 The value: 0
 The value: 0 Present? false */
 ```
-[Exercise: Maps + BONUS(strings.Fields)](https://go.dev/tour/moretypes/23) : [Solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/map__withStringsFields.go) <br>
+Exercise: [Maps + BONUS(strings.Fields)](https://go.dev/tour/moretypes/23) : [Solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/map__withStringsFields.go) <br>
 
 **Removing key/value pairs with the ```delete``` function:**
 ```
