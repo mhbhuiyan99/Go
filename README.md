@@ -2,6 +2,7 @@ Resources:
 1. Learn: [A Tour of Go](https://go.dev/tour/list) + [Golang Backend Development](https://youtube.com/playlist?list=PLpCqPSEm2Xe8sEY2haMDUVgwbkIs5NCJI&si=Krk7dnfCoNG7ulpY)
 2. Practice: [Exercism Go Track](https://exercism.org/tracks/go)
 3. Find something: [Go Basics](https://github.com/gophertuts/go-basics/tree/master)
+4. [My Notes](https://medium.com/@mhbhuiyan)
    
 ------
 ## imports
