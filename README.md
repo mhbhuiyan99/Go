@@ -701,5 +701,34 @@ func main() {
 } // Output: map[milk:5.67 tea:3.43]
 ```
 --------
+## Methods
+Go does not have classes. However, you can define methods on types.<br>
+A method is a function with a special receiver argument.<br>
+```
+type Vertex struct {
+	X, Y float64
+}
 
+func (v Vertex) Abs() float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+```
+In this example, the ```Abs``` method has a receiver of type ```Vertex``` named ```v```.<br>
+
+**Methods are functions:** a method is just a function with a receiver argument.
+```
+type Vertex struct {
+	X, Y float64
+}
+
+func Abs(v Vertex) float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+```
+Here's ```Abs``` written as a regular function with no change in functionality. <br>
+**Key Differences:**<br>
+<img width="827" height="320" alt="image" src="https://github.com/user-attachments/assets/820b713c-d57d-49f9-9d7c-06fb52b09134" />
+
+You can declare a method on non-struct types, too.
+```type MyFloat float64```
 
