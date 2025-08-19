@@ -729,6 +729,26 @@ Here's ```Abs``` written as a regular function with no change in functionality. 
 **Key Differences:**<br>
 <img width="827" height="320" alt="image" src="https://github.com/user-attachments/assets/820b713c-d57d-49f9-9d7c-06fb52b09134" />
 
-You can declare a method on non-struct types, too.
+You can declare a method on non-struct types, too.<br>
 ```type MyFloat float64```
+You can only declare a method with a receiver **whose type is defined in the same package as the method.** You cannot declare a method with a receiver whose type is defined in another package (which includes the built-in types such as ```int```).
+```
+type MyFloat float64
 
+func (f MyFloat) Abs() float64 { ✅
+	if f < 0 {
+		return float64(-f)
+	}
+	return float64(f)
+}
+```
+```
+func (f int) Abs() float64 { ❌
+	if f < 0 {
+		return float64(-f)
+	}
+	return float64(f)
+} /* Output: 
+./prog.go:10:9: cannot define new methods on non-local type int
+./prog.go:19:16: f.Abs undefined (type MyFloat has no field or method Abs) */
+```
