@@ -752,3 +752,4 @@ func (f int) Abs() float64 { ❌
 ./prog.go:10:9: cannot define new methods on non-local type int
 ./prog.go:19:16: f.Abs undefined (type MyFloat has no field or method Abs) */
 ```
+Two types of Receiver: Value Receiver, [Pointer Receiver](https://go.dev/tour/methods/4) <br>
