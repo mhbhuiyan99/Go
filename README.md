@@ -785,4 +785,13 @@ For the statement ```v.Scale(5)```, even though ```v``` is a value and not a poi
 The equivalent thing happens in the reverse direction.
 - Functions that take a value argument must take a value of that specific type.
 - while methods with value receivers take either a value or a pointer as the receiver when they are called.
+<br>
+
+### Choosing a value or pointer receiver
+There are two reasons to use a pointer receiver:
+- The first is so that the method can modify the value that its receiver points to.
+- The second is to avoid copying the value on each method call.
+<br>
+In general, all methods on a given type should have either value or pointer receivers, but not a mixture of both.
+
 
