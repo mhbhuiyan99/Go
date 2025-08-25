@@ -752,4 +752,37 @@ func (f int) Abs() float64 { ❌
 ./prog.go:10:9: cannot define new methods on non-local type int
 ./prog.go:19:16: f.Abs undefined (type MyFloat has no field or method Abs) */
 ```
-Two types of Receiver: Value Receiver, [Pointer Receiver](https://go.dev/tour/methods/4) <br>
+Two types of Receiver: Value Receiver, [Pointer Receiver](https://go.dev/tour/methods/4) 
+
+### Methods and pointer indirection:
+
+functions with a pointer argument must take a pointer:
+```
+func ScaleFunc(v *Vertex, f float64) {
+	...
+}
+func main() {
+	var v Vertex
+	ScaleFunc(v, 5)  // ❌ Compile error!
+	ScaleFunc(&v, 5) // OK
+}
+```
+while methods with pointer receivers take either a value or a pointer as the receiver when they are called:
+```
+func (v *Vertex) Scale(f float64) {
+	...
+}
+func main() {
+	var v Vertex
+	v.Scale(5)  // OK
+	p := &v
+	p.Scale(10) // OK
+}
+```
+For the statement ```v.Scale(5)```, even though ```v``` is a value and not a pointer, the method with the pointer receiver is called automatically. That is, as a convenience, Go interprets the statement ```v.Scale(5)``` as ```(&v).Scale(5)``` since the Scale method has a pointer receiver.
+<br>
+<br>
+The equivalent thing happens in the reverse direction.
+- Functions that take a value argument must take a value of that specific type.
+- while methods with value receivers take either a value or a pointer as the receiver when they are called.
+
