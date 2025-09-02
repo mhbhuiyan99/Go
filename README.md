@@ -794,4 +794,5 @@ There are two reasons to use a pointer receiver:
 <br>
 In general, all methods on a given type should have either value or pointer receivers, but not a mixture of both.
 
-
+## Interfaces
+Read it here: [What Can You Do? Letting Interfaces Ask the Question in Go](https://medium.com/stackademic/what-can-you-do-letting-interfaces-ask-the-question-in-go-dde15ded1350)
