@@ -11,15 +11,15 @@ Learning in this [tutotial](https://youtu.be/P6AUDnQe360):
 ## Step - 1 : Connect to Database
 
 ### Need:
-	1. data source name (here 'dsn')
-	2. Database Library (To connect database) <br>
-	   We are using Postgres. <br>
-	   So,<br>
-	   we need postgress implementation of that single api 
-	   that go provides a single interface for RDBMS and that
-	   would enable us communicate with postgres <br>
-	   So,<br>
-	   we need to install that library: ```go get github.com/lib/pq``` <br>
+1. data source name (here 'dsn')
+2. Database Library (To connect database) <br>
+   We are using Postgres. <br>
+   So,<br>
+   we need postgress implementation of that single api 
+   that go provides a single interface for RDBMS and that
+   would enable us communicate with postgres <br>
+   So,<br>
+   we need to install that library: ```go get github.com/lib/pq``` <br>
 ```
 func connectToDB(dsn string) (*sql.DB, error) {
 
@@ -110,7 +110,7 @@ type Users struct {
 }
 ```
 
-### Step - 2 : Create UsersModel
+### Step - 2 : Create Users Model
 To pass the Dependencies <br>
 ```models/users.go```:
 ```
