@@ -1,5 +1,5 @@
-# [Writing Web Applications - Go Documentation](https://go.dev/doc/articles/wiki/)
-tutorial on building web applications with ```net/http```.<br>
+# Writing Web Applications
+[Go Documentation: ](https://go.dev/doc/articles/wiki/)tutorial on building web applications with ```net/http```.<br>
 
 ## Topics covered in this tutorial:
 - Creating a data structure with load and save methods
