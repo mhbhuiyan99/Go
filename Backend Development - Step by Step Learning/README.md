@@ -7,7 +7,7 @@
    4. Using the ```regexp``` package to validate user input
    5. Using closures
 
-2. [WithOut Dependencies](https://github.com/mhbhuiyan99/Go/tree/main/Backend%20Development%20-%20Step%20by%20Step%20Learning/01.%20Writing%20Web%20Applications/02.%20WithOut%20Dependencies):
+2. [Web Server : WithOut Dependencies](https://github.com/mhbhuiyan99/Go/tree/main/Backend%20Development%20-%20Step%20by%20Step%20Learning/01.%20Writing%20Web%20Applications/02.%20WithOut%20Dependencies):
    1. easy explanation for scratch
    2. using **Mutex**
    3. create user: **PUT**
