@@ -14,7 +14,7 @@
    4. get user: **GET**
    5. delete user: **DELETE**
 
-### ${{\color{Greenyellow}\large{\textsf{Step - 2 :}}}}\$ Work with Database
+### ${{\color{Greenyellow}\large{\textsf{Step - 2 :}}}}\$ [Work with Database](https://github.com/mhbhuiyan99/Go/tree/main/Backend%20Development%20-%20Step%20by%20Step%20Learning/02.%20Work%20with%20Database)
 **Learn:** 
 1. Connecting to Postgres SQL in Go
 2. Running SQL migration from Go
@@ -22,4 +22,13 @@
 4. Fetching Records
 5. Paginating your records
 
-### ${{\color{Greenyellow}\large{\textsf{Step - 3 :}}}}\$ 
+### ${{\color{Greenyellow}\large{\textsf{Step - 3 :}}}}\$ [Task-Manager-API](https://github.com/mhbhuiyan99/Task-Manager-API)
+Built using the lessons learned from Step 1 and Step 2. <br>
+**Tech Stack:** Golang, net/http, and PostgreSQL <br>
+𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:
+ - Create new tasks
+ - Get all tasks with pagination
+ - Get single task by ID
+ - Update task status
+ - Delete tasks
+
