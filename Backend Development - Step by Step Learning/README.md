@@ -32,3 +32,9 @@ Built using the lessons learned from Step 1 and Step 2. <br>
  - Update task status
  - Delete tasks
 
+### ${{\color{Greenyellow}\large{\textsf{Step - 4 :}}}}\$ [Blog-API-with-Middleware](https://github.com/mhbhuiyan99/Blog-API-with-Middleware)
+**Why This Project?** <br>
+1. Requires multiple middleware (logging, auth, CORS)
+2. User authentication (JWT tokens)
+3. Authorization (only author can edit/delete their posts)
+4. File uploads (blog post images - optional)
