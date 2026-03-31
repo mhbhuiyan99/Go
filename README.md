@@ -1,5 +1,5 @@
 Resources: 
-1. Learn: [A Tour of Go](https://go.dev/tour/list) + [Golang Backend Development](https://youtube.com/playlist?list=PLpCqPSEm2Xe8sEY2haMDUVgwbkIs5NCJI&si=Krk7dnfCoNG7ulpY) + Golang conferences
+1. Learn: [A Tour of Go](https://go.dev/tour/list) + [Golang Backend Development](https://youtube.com/playlist?list=PLpCqPSEm2Xe8sEY2haMDUVgwbkIs5NCJI&si=Krk7dnfCoNG7ulpY) + Golang Conferences
 2. Practice: [Exercism Go Track](https://exercism.org/tracks/go)
 3. Find something: [Go Basics](https://github.com/gophertuts/go-basics/tree/master)
 4. [My Notes on Medium](https://medium.com/@mhbhuiyan)
@@ -794,5 +794,119 @@ There are two reasons to use a pointer receiver:
 <br>
 In general, all methods on a given type should have either value or pointer receivers, but not a mixture of both.
 
+------
 ## Interfaces
 Read it here: [What Can You Do? Letting Interfaces Ask the Question in Go](https://medium.com/stackademic/what-can-you-do-letting-interfaces-ask-the-question-in-go-dde15ded1350)
+
+### io.Reader
+Reader is the interface that wraps the basic Read method.
+```
+type Reader interface {
+	Read(p []byte) (n int, err error)
+}
+```
+Read reads up to len(p) bytes into p. It returns the number of bytes read (0 <= n <= len(p)) and any error encountered. Even if Read returns n < len(p), it may use all of p as scratch space during the call. If some data is available but not len(p) bytes, Read conventionally returns what is available instead of waiting for more.<br>
+
+When Read encounters an error or end-of-file condition after successfully reading n > 0 bytes, it returns the number of bytes read.<br>
+
+The most critical rule when working with `io.Reader` is to process n before checking `err`.<br>
+
+On the very last successful read, a Reader might return the remaining data and the io.EOF error at the same time. If your code checks for the error and exits the loop immediately, you will lose those final bytes.<br>
+
+However, the logic inside those values changes depending on the state of the read:<br>
+
+**Normal loop:** Returns (number_of_bytes, nil).<br>
+**The very last chunk:** It might return (remaining_bytes, nil) OR (remaining_bytes, io.EOF).<br>
+**Once finished:** It will return (0, io.EOF).<br>
+
+The reason people emphasize this is because many programmers expect a "success" (nil error) or a "failure" (error), but io.Reader can give you both at once (some data + the EOF signal). That's why you should always handle n before checking err.
+<br>
+```
+import (
+	"fmt"
+	"io"
+	"os"
+)
+
+func fileReader() {
+	// 1. Open the file :: [ Ensure book.txt exists for this example to work ]
+	f, err := os.Open("book.txt")
+	if err != nil {
+		panic(err)
+	}
+	
+	// 2. Ensure the file is closed when the function finishes
+	defer f.Close()
+
+	// 3. Create a small buffer to read in chunks (20 bytes at a time)
+	buf := make([]byte, 20)
+
+	for {
+		// 4. Read returns (n bytes read, any error encountered)
+		n, err := f.Read(buf)
+
+		// 5. CRITICAL: Process data BEFORE checking for errors.
+		// A Reader can return data (n > 0) AND io.EOF at the same time.
+		if n > 0 {
+			fmt.Print(string(buf[:n]))
+
+			/* Never print the whole buf. Always slice it to n.
+               Since we reuse the same buffer, index 10-20 might contain "garbage" data
+			   from a previous iteration if the current read only filled 1-9. */
+		}
+
+		// 6. Handle the exit conditions
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			// A real error occurred (e.g., disk failure)
+			fmt.Println("\nError reading file:", err)
+			break
+		}
+	}
+}
+
+func main() {
+	fileReader()
+}
+```
+<br>
+
+#### strings.NewReader
+NewReader returns a new Reader reading from s. It allows you to treat a static string as a stream of data, just like a file on a disk or a network connection. 
+```
+package main
+
+import (
+	"fmt"
+	"io"
+	"strings"
+)
+
+// This function doesn't care if the data comes from a file, 
+// a network, or a string—it only cares that it's an io.Reader.
+func printData(r io.Reader) {
+	buf := make([]byte, 8)
+	for {
+		n, err := r.Read(buf)
+		if n > 0 {
+			fmt.Printf("Read %d bytes: %q\n", n, string(buf[:n]))
+		}
+		if err == io.EOF {
+			break
+		}
+	}
+}
+
+func main() {
+	// 1. Create a concrete *strings.Reader implementation
+	myString := "Go is awesome!"
+	reader := strings.NewReader(myString)
+
+	// 2. Pass it to a function expecting the io.Reader interface
+	fmt.Println("--- Reading from string ---")
+	printData(reader)
+}
+```
+
