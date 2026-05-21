@@ -37,7 +37,7 @@ const secret = 0  // Unexported (private to mypkg)
 Type comes after the variable name.
 ```go
 func add(x int, y int) int { // func add(x, y int) int {
-	return x + y;
+	return x + y
 }
 ```
 A function can return any number of results.
