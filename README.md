@@ -6,7 +6,7 @@ Resources:
    
 ------
 ## imports
-```
+```go
     "fmt"       	// For formatted I/O : printing, scanning
     "math/rand" 	// For random number generation
     "math"      	// Provides mathematical functions and constants - no randomness 
@@ -21,7 +21,7 @@ In Go, exported names (also called "public" identifiers) are variables, function
 
 If a name starts with a capital letter, it is exported (public).<br>
 If it starts with a lowercase letter, it is unexported (private).
-```
+```go
 package mypkg
 const Answer = 42 // Exported (accessible outside mypkg)
 const secret = 0  // Unexported (private to mypkg)
@@ -35,13 +35,13 @@ const secret = 0  // Unexported (private to mypkg)
 ## Function
 
 Type comes after the variable name.
-```
+```go
 func add(x int, y int) int { // func add(x, y int) int {
 	return x + y;
 }
 ```
 A function can return any number of results.
-```
+```go
 func swap(x, y string) (string, string) {
 	return y, x
 }
@@ -51,7 +51,7 @@ Go's return values may be named. If so, they are treated as variables defined at
 These names should be used to document the meaning of the return values.<br>
 A return statement without arguments returns the named return values. This is known as a "naked" return.<br>
 Naked return statements should be used only in short functions, as with the example shown here. They can harm readability in longer functions.
-```
+```go
 func split(sum int) (x, y int) {
 	x = sum * 4 / 9
 	y = sum - x
@@ -62,7 +62,7 @@ func split(sum int) (x, y int) {
 ## Variables
 
 The var statement declares a list of variables; as in function argument lists, the type is last.
-```
+```go
 var c, python, java bool
 ```
 ### Variables with initializers ###
@@ -71,7 +71,7 @@ A var declaration can include initializers, one per variable. ```var i, j int = 
 If an initializer is present, the type can be omitted; the variable will take the type of the initializer. ```var c, python, java = true, false, "no!"```
 
 Inside a function, the ```:=``` short assignment statement can be used in place of a var declaration with implicit type.
-```
+```go
 func main() {
     x := 42          // x is declared as an int
     name := "Alice"   // name is declared as a string
@@ -82,7 +82,7 @@ The ```:=``` syntax is not allowed at package scope (outside any function).
 
 ### Basic types
 
-```
+```go
 bool
 string
 int  int8  int16  int32  int64
@@ -103,7 +103,7 @@ false for the boolean type, and
 ```
 ### Variable Shadowing
 Variable shadowing happens when a variable declared within a narrower scope (like inside a function or block) has the same name as a variable in an outer scope. The inner variable "shadows" or hides the outer one within its scope.
-```
+```go
 package main
 import "fmt"
 var x = 10
@@ -124,19 +124,19 @@ Output:
 The expression T(v) converts the value v to the type T.<br>
 
 Some numeric conversions:
-```
+```go
 var i int = 42
 var f float64 = float64(i)
 var u uint = uint(f)
 ```
 Or, put more simply:
-```
+```go
 i := 42
 f := float64(i)
 u := uint(f)
 ```
 Unlike in C, in Go assignment between items of different type requires an explicit conversion.
-```
+```go
 var x int = 10
 var y float64 = float64(x)  // ✅ 
 var y float64 = x  // ❌
