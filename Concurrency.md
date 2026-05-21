@@ -4,7 +4,7 @@
 # Phase 1: Feel the Goroutine
 ## Exercise 1.1: "Where's My Output?"
 Run this code. Predict the output. Then fix it so it always prints "done" before the program exits.
-```
+```go
 package main
 
 import (
@@ -32,7 +32,7 @@ Write a program where:
 3. The goroutine sends "hello from goroutine" on the channel.
 4. `main` receives from the channel and prints it.
 
-```
+```go
 package main
 
 import "fmt"
