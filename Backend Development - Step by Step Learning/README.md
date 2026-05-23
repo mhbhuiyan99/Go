@@ -1,4 +1,4 @@
-### ${{\color{Greenyellow}\large{\textsf{Step - 1 :}}}}\$ Writing Web Applications
+### ${{\color{#f03c15}\large{\textsf{Step - 1 :}}}}\$ Writing Web Applications
 ***Can start with 2***
 1. [Standard_Library](https://github.com/mhbhuiyan99/Go/tree/main/Backend%20Development%20-%20Step%20by%20Step%20Learning/01.%20Writing%20Web%20Applications/01.%20Standard_Library):
    1. Creating a data structure with load and save methods
@@ -14,7 +14,7 @@
    4. get user: **GET**
    5. delete user: **DELETE**
 
-### ${{\color{Greenyellow}\large{\textsf{Step - 2 :}}}}\$ [Work with Database](https://github.com/mhbhuiyan99/Go/tree/main/Backend%20Development%20-%20Step%20by%20Step%20Learning/02.%20Work%20with%20Database)
+### ${{\color{#f03c15}\large{\textsf{Step - 2 :}}}}\$ [Work with Database](https://github.com/mhbhuiyan99/Go/tree/main/Backend%20Development%20-%20Step%20by%20Step%20Learning/02.%20Work%20with%20Database)
 **Learn:** 
 1. Connecting to Postgres SQL in Go
 2. Running SQL migration from Go
@@ -22,7 +22,7 @@
 4. Fetching Records
 5. Paginating your records
 
-### ${{\color{Greenyellow}\large{\textsf{Step - 3 :}}}}\$ [Task-Manager-API](https://github.com/mhbhuiyan99/Task-Manager-API)
+### ${{\color{#f03c15}\large{\textsf{Step - 3 :}}}}\$ [Task-Manager-API](https://github.com/mhbhuiyan99/Task-Manager-API)
 Built using the lessons learned from Step 1 and Step 2. <br>
 **Tech Stack:** Golang, net/http, and PostgreSQL <br>
 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:
@@ -32,7 +32,7 @@ Built using the lessons learned from Step 1 and Step 2. <br>
  - Update task status
  - Delete tasks
 
-### ${{\color{Greenyellow}\large{\textsf{Step - 4 :}}}}\$ [Blog-API-with-Middleware](https://github.com/mhbhuiyan99/Blog-API-with-Middleware)
+### ${{\color{#f03c15}\large{\textsf{Step - 4 :}}}}\$ [Blog-API-with-Middleware](https://github.com/mhbhuiyan99/Blog-API-with-Middleware)
 **Why This Project?** <br>
 1. Requires multiple middleware (logging, auth, CORS)
 2. User authentication (JWT tokens)
