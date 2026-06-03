@@ -73,7 +73,7 @@ weather-dashboard/
 ### Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/mhbhuiyan99/Go/tree/main/Beego/weather-dashboard
 cd weather-dashboard
 ```
 
