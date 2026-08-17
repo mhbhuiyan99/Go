@@ -154,7 +154,7 @@ A first-order function is a regular function that:
 2. Does not return another function
 
 #### 🛡️ Standard Function or Named Function
-```
+```go
 func functionName(parameters) returnType {
     // simply a regular function that has a name
 }
@@ -168,7 +168,8 @@ It is commonly used for:
 2. Initializing state
 3. Connecting to databases or reading config files
 4. Running setup logic before any other function is called
-```
+   
+```go
 package main
 import "fmt"
 
@@ -193,7 +194,7 @@ Output:
 #### 🛡️ Anonymous Function
 
 An anonymous function is a function without a name. 
-```
+```go
 package main
 
 import "fmt"
@@ -210,7 +211,7 @@ func main() {
 #### 🛡️ IIFE (Immediately Invoked Function Expression)
 
 In Go, an IIFE is an ***anonymous function*** that is defined and called immediately.
-```
+```go
 package main
 
 import "fmt"
@@ -225,7 +226,7 @@ func main() {
 ```
 #### Parameter and Argument
 Parameters are placeholders, arguments are real values.
-```
+```go
 func greet(name string) { // "name" is a parameter
     fmt.Println("Hello", name)
 }
@@ -240,7 +241,7 @@ A function which does at least one of the following
 2. returns a function as its result
 
 🧪 Example 1: Function as Parameter
-```
+```go
 func calculate(a int, b int, op func(int, int) int) int {
                   // 🔍syntax for assigning a function to a variable >> anonymous function
     return op(a, b)
@@ -256,7 +257,7 @@ func main() {
 }
 ```
 🧪 Example 2: Returning a Function
-```
+```go
 func makeAdder(x int) func(int) int {
     return func(y int) int {
         return x + y
@@ -282,7 +283,7 @@ A first-class function is a function ( = ✨entity✨ ) that is treated as a fir
 
 ### Callback Function
 A callback function is a function passed as an argument to another function, which is then called ("called back") inside that outer function.
-```
+```go
 package main
 
 import "fmt"
@@ -302,7 +303,8 @@ func main() {
     fmt.Println("Result:", result) // Output: 7
 }
 ```
-## [Closures](https://gobyexample.com/closures)
+## Closures
+Concept: [Go by Example: Closures](https://gobyexample.com/closures)
 some example: [Function values](https://go.dev/tour/moretypes/24), [Function closures](https://go.dev/tour/moretypes/25) <br>
 Exercise: [Fibonacci closure](https://go.dev/tour/moretypes/26)
 
@@ -312,39 +314,39 @@ Exercise: [Fibonacci closure](https://go.dev/tour/moretypes/26)
 
 Go has only one looping construct, the ```for``` loop.
 **Syntax:** 
-```
+```go
 for initialization; condition; update {
   // Statements
 }
 ```
 #### 🛡️ for Loop as a While Loop
-```
+```go
 for condition {
   // Statements
 }
 ```
 #### 🛡️ Infinite Loops
-```
+```go
 for {
   fmt.Println("Running forever...")
 }
 ```
 #### 🛡️ for...range Loop
-```
+```go
 for index, value = range nums {
   // Statements
 }
 ```
 You can also skip the index or value if not needed:
-```
+```go
 for _, value := range nums { // skip index
     // Statements
 }
 ```
-[learn for loop with code](https://github.com/mhbhuiyan99/Go/tree/main/for_loop)
+[example code](https://github.com/mhbhuiyan99/Go/tree/main/for_loop)
 
 ### if, else if, else
-```
+```go
 if condition1 {
     // code1
 } else if condition2 {
@@ -356,13 +358,13 @@ if condition1 {
 #### Short Statement in if
 
 You can declare and initialize a variable inside the if statement.
-```
+```go
 if x := 5; x > 3 {
     fmt.Println("x is greater than 3")
 }
 ```
 ❌ No parentheses required
-```
+```go
 // ✅ correct
 if x > 5 { ... }
 
@@ -377,7 +379,7 @@ if (x > 5) { ... } // Compiler allows but not idiomatic Go
 A ```switch``` statement is a shorter way to write a sequence of ```if - else``` statements. It runs the first case whose value is equal to the condition expression.<br>
 Switch cases evaluate cases from top to bottom, stopping when a case succeeds.<br>
 Switch without a condition is the same as switch ```true```.
-```
+```go
 package main
 
 import "fmt"
@@ -403,7 +405,7 @@ func main() {
 ### Defer
 
 ```defer``` is a keyword in Go used to delay the execution of a function until the surrounding function returns.
-```
+```go
 package main
 
 import "fmt"
@@ -420,7 +422,7 @@ World
 #### Multiple defer statements
 
 ➡️ LIFO (Last In, First Out) — like a stack.
-```
+```go
 func main() {
 	defer fmt.Println("One")
 	defer fmt.Println("Two")
@@ -433,12 +435,13 @@ One
 */
 ```
 ---------
-## [Go’s memory model](https://mhbhuiyan.medium.com/gos-memory-model-092546edd714)
+## Go’s memory model
+Note: [Understanding Go’s Memory Model: A Visual Guide](https://mhbhuiyan.medium.com/gos-memory-model-092546edd714)
 
-
+---
 ## Struct
 #### Defining a struct:
-```
+```go
 type User struct{
 	// member variable or property
 	Name string
@@ -446,7 +449,7 @@ type User struct{
 }
 ```
 #### Create Object / Instance :: Instantiate
-```
+```go
 	var user1 User
 	user1 = User{ // Instance or Object
 		Name: "Mojammel",
@@ -460,13 +463,13 @@ type User struct{
 
 ### Receiver Function:
 Syntax:
-```
+```go
 func (r ReceiverType) MethodName(params) ReturnType {
     // method body
 }
 ```
 A Receiver Function is bound to a specific type (usually a struct), using a receiver.
-```
+```go
 package main
 import "fmt"
 
@@ -510,7 +513,7 @@ Name:  Mojammel ID:  12345
 ```
 ### Pointers to structs
 To access the field X of a struct when we have the struct pointer p we could write (*p).X. However, that notation is cumbersome, so the language permits us instead to write just p.X, without the explicit dereference.
-```
+```go
 type Vertex struct {
 	X int
 	Y int
@@ -529,7 +532,7 @@ A [struct literal](https://go.dev/tour/moretypes/5) denotes a newly allocated st
 You can list just a subset of fields by using the Name: syntax. (And the order of named fields is irrelevant.)<br>
 
 The special prefix & returns a pointer to the struct value.
-```
+```go
 type Vertex struct {
 	X, Y int
 }
@@ -548,7 +551,7 @@ func main() {
 
 -------
 ## Array
-```
+```go
 package main
 import "fmt"
 
@@ -586,7 +589,7 @@ read it: [From Pointers to Slices: Exploring Go’s Underlying Memory](https://m
 ## Maps
 map = Key value pairs. <br>
 Array and Slice use only integer type index. But in ```map``` index can be any type.
-```
+```go
 func main() {
 	menu := map[string]float64{
 		"rice": 11.23,
@@ -599,13 +602,13 @@ func main() {
 ```
 **printng using ```loop```:** <br>
 The	for...range	loop processes map keys and values in a	random order because a map is an unordered collection of keys and values.
-```
+```go
 	for key, value := range menu{
 		fmt.Println(key, "\t:: ", value) // the \t for tab
 	}
 ```
 Try another way:
-```
+```go
 func main() {
 	var menu map[string]int
 	menu["rice"] = 123
@@ -617,7 +620,7 @@ panic: assignment to entry in nil map
 The zero value of a map is nil. A nil map has no keys, nor can keys be added.<br>
 How can we fixed it?<br>
 The ```make``` function returns a map of the given type, initialized and ready for use.
-```
+```go
 func main() {
 	menu := make(map[string]int)
 	menu["rice"] = 123
@@ -629,7 +632,7 @@ There is an another keyword ```new```, it only allocate, no initiate of memory.
 
 ### Map literals
 Map literals are like struct literals, but the keys are required.
-```
+```go
 type Vertex struct {
 	Lat, Long float64
 }
@@ -649,7 +652,7 @@ func main() {
 // Output: map[Bell Labs:{40.68433 -74.39967} Google:{37.42202 -122.08408}]
 ```
 If the top-level type is just a type name, you can omit it from the elements of the literal.
-```
+```go
 var m = map[string]Vertex{
 	"Bell Labs": {40.68433, -74.39967},
 	"Google":    {37.42202, -122.08408},
@@ -665,7 +668,7 @@ var m = map[string]Vertex{
 ```elem, ok = m[key]```<br>
 If key is in m, ok is true. If not, ok is false.<br>
 If key is not in the map, then elem is the zero value for the map's element type.
-```
+```go
 func main() {
 	m := make(map[string]int)
 
@@ -689,7 +692,7 @@ The value: 0 Present? false */
 Exercise: [Maps + BONUS(strings.Fields)](https://go.dev/tour/moretypes/23) : [Solution](https://github.com/mhbhuiyan99/Go/blob/main/Exercise/map__withStringsFields.go) <br>
 
 **Removing key/value pairs with the ```delete``` function:**
-```
+```go
 func main() {
 	menu := map[string]float64{
 		"rice": 11.23,
@@ -704,7 +707,7 @@ func main() {
 ## Methods
 Go does not have classes. However, you can define methods on types.<br>
 A method is a function with a special receiver argument.<br>
-```
+```go
 type Vertex struct {
 	X, Y float64
 }
@@ -725,14 +728,14 @@ func Abs(v Vertex) float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 ```
-Here's ```Abs``` written as a regular function with no change in functionality. <br>
+Here's ```Abs``` written as a regular function with no change in functionality. <br><br>
 **Key Differences:**<br>
 <img width="827" height="320" alt="image" src="https://github.com/user-attachments/assets/820b713c-d57d-49f9-9d7c-06fb52b09134" />
 
 You can declare a method on non-struct types, too.<br>
 ```type MyFloat float64```
 You can only declare a method with a receiver **whose type is defined in the same package as the method.** You cannot declare a method with a receiver whose type is defined in another package (which includes the built-in types such as ```int```).
-```
+```go
 type MyFloat float64
 
 func (f MyFloat) Abs() float64 { ✅
@@ -742,7 +745,7 @@ func (f MyFloat) Abs() float64 { ✅
 	return float64(f)
 }
 ```
-```
+```go
 func (f int) Abs() float64 { ❌
 	if f < 0 {
 		return float64(-f)
@@ -757,10 +760,11 @@ Two types of Receiver: Value Receiver, [Pointer Receiver](https://go.dev/tour/me
 ### Methods and pointer indirection:
 
 functions with a pointer argument must take a pointer:
-```
+```go
 func ScaleFunc(v *Vertex, f float64) {
 	...
 }
+
 func main() {
 	var v Vertex
 	ScaleFunc(v, 5)  // ❌ Compile error!
@@ -768,7 +772,7 @@ func main() {
 }
 ```
 while methods with pointer receivers take either a value or a pointer as the receiver when they are called:
-```
+```go
 func (v *Vertex) Scale(f float64) {
 	...
 }
@@ -800,7 +804,7 @@ Read it here: [What Can You Do? Letting Interfaces Ask the Question in Go](https
 
 ### io.Reader
 Reader is the interface that wraps the basic Read method.
-```
+```go
 type Reader interface {
 	Read(p []byte) (n int, err error)
 }
@@ -821,7 +825,7 @@ However, the logic inside those values changes depending on the state of the rea
 
 The reason people emphasize this is because many programmers expect a "success" (nil error) or a "failure" (error), but io.Reader can give you both at once (some data + the EOF signal). That's why you should always handle n before checking err.
 <br>
-```
+```go
 import (
 	"fmt"
 	"io"
@@ -875,7 +879,7 @@ func main() {
 
 #### strings.NewReader
 NewReader returns a new Reader reading from s. It allows you to treat a static string as a stream of data, just like a file on a disk or a network connection. 
-```
+```go
 package main
 
 import (
